@@ -1,1 +1,7 @@
-console.log('component')
+class BackButton {
+  static back() {
+    return window.history.back()
+  }
+}
+
+window.BackButton = BackButton
