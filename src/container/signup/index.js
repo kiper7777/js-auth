@@ -15,4 +15,4 @@ class SignupForm {
   }
 }
 
-window.SignupForm = SignupForm
+window.signupForm = SignupForm

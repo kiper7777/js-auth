@@ -36,7 +36,7 @@
 		}
 
 		&--error {
-			border-color: s.color(red);
+			border-color: s.color(red) !important;
 		}
 	}
 }
