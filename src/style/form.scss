@@ -33,14 +33,24 @@
   &:active {
     opacity: 0.3;
   }
+
+  &--disabled {
+    opacity: 0.5;
+    cursor: default;
+
+    &:hover,
+    &:active {
+      opacity: 0.5;
+      cursor: default;
+    }
+  }
 }
 
 .alert {
   border: 1px solid transparent;
-  border-bottom: 10px;
   padding: s.space(3) s.space(4);
   font-size: 14px;
-
+  
   &--success {
     border-color: s.color(green);
     color: s.color(green);
@@ -54,5 +64,9 @@
   &--progress {
     border-color: s.color(blue);
     color: s.color(blue);
+  }
+
+  &--disabled {
+    display: none;
   }
 }

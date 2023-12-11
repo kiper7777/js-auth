@@ -7,6 +7,7 @@
 html {
 	min-height: 100%;
 	padding: 64px 0;
+	display: grid;
 }
 
 body {
@@ -49,3 +50,4 @@ body {
 		color: s.color(dark);
 	}
 }
+
