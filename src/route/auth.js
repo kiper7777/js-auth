@@ -4,11 +4,25 @@ const express = require('express')
 const router = express.Router()
 
 const { User } = require('../class/user')
+// const { Confirm } = require('../class/confirm')
+// const { Session } = require('../class/session')
 
 User.create({
-  email: 'test@mail.com',
+  email: 'user@mail.com',
   password: 123,
   role: 1,
+})
+
+User.create({
+  email: 'admin@mail.com',
+  password: 123,
+  role: 2,
+})
+
+User.create({
+  email: 'developer@mail.com',
+  password: 123,
+  role: 3,
 })
 
 // ================================================================
@@ -66,23 +80,24 @@ router.post('/signup', function (req, res) {
   }
 
   try {
-    const user = User.getByEmail(email)
+    User.create({ email, password, role })
+    // const user = User.getByEmail(email)
 
-    if (user) {
-      return res.status(400).json({
-        message: 'Помилка. Такий користувач вже існує',
-      })
-    }
+    // if (user) {
+    //   return res.status(400).json({
+    //     message: 'Помилка. Такий користувач вже існує',
+    //   })
+    // }
 
-    const newUser = User.create({ email, password, role })
+    // const newUser = User.create({ email, password, role })
 
-    const session = Session.create(newUser)
+    // const session = Session.create(newUser)
 
-    Confirm.create(newUser.email)
+    // Confirm.create(newUser.email)
 
     return res.status(200).json({
       message: 'Користувач успішно зареєстрованний',
-      session,
+      // session,
     })
   } catch (err) {
     return res.status(400).json({
