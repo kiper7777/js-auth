@@ -43,6 +43,10 @@
       href='dist/css/container/{{name}}/index.css'
       rel='stylesheet'
     />
+    {{! Підключаємо файл скриптів container }}
+    <script
+      src='dist/js/container/{{name}}/index.js'
+    ></script>
 
     {{#each component}}
       {{! Підключаємо файл стилів component }}
@@ -64,10 +68,5 @@
     {{{body}}}
 
   </body>
-
-  {{! Підключаємо файл скриптів container }}
-  <script
-    src='dist/js/container/{{name}}/index.js'
-  ></script>
 
 </html>

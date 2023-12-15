@@ -1,4 +1,4 @@
-@use './index.scss' as s;
+@use './index' as s;
 
 .form {
   display: flex;
@@ -17,7 +17,7 @@
     display: none;
 
     &--active {
-        display: block;
+      display: block;
     }
   }
 }
@@ -48,9 +48,10 @@
 
 .alert {
   border: 1px solid transparent;
+  border-radius: 10px;
   padding: s.space(3) s.space(4);
   font-size: 14px;
-  
+
   &--success {
     border-color: s.color(green);
     color: s.color(green);
@@ -74,5 +75,29 @@
 .validation {
   &--active {
     border-color: s.color(red) !important;
+  }
+}
+
+.link {
+  color: s.color(main);
+
+  @include s.click;
+}
+
+.link__prefix {
+  color: s.color(light);
+}
+
+.skeleton {
+  animation: skeleton-animation 1s infinite alternate;
+}
+
+@keyframes skeleton-animation {
+  from {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+
+  to {
+    background-color: rgba(0, 0, 0, 0.15);
   }
 }
