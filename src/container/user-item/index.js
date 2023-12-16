@@ -74,7 +74,7 @@ class UserItem extends List {
 						<span class="data__value skeleton"></span>
 					</div>
 					<div class="data">
-						<span class="data__title">Пошта підвтерджена?</span>
+						<span class="data__title">Пошта підтверджена?</span>
 						<span class="data__value skeleton"></span>
 					</div>
 				`
@@ -97,7 +97,7 @@ class UserItem extends List {
 						<span class="data__value ">${role}</span>
 					</div>
 					<div class="data">
-						<span class="data__title">Пошта підвтерджена?</span>
+						<span class="data__title">Пошта підтверджена?</span>
 						<span class="data__value ">${confirm}</span>
 					</div> 
 				`
