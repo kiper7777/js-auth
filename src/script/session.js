@@ -1,9 +1,7 @@
 export const SESSION_KEY = 'sessionAuth'
-
 export const saveSession = (session) => {
   try {
     window.session = session
-
     localStorage.setItem(
       SESSION_KEY,
       JSON.stringify(session),

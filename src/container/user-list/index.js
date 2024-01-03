@@ -4,7 +4,6 @@ import { USER_ROLE } from '../../script/user'
 class UserList extends List {
   constructor() {
     super()
-
     this.element = document.querySelector('#user-list')
     if (!this.element) throw new Error('Element is null')
 
@@ -13,9 +12,7 @@ class UserList extends List {
 
   loadData = async () => {
     this.updateStatus(this.STATE.LOADING)
-
     // return null
-
     try {
       const res = await fetch('/user-list-data', {
         method: 'GET',
@@ -51,7 +48,6 @@ class UserList extends List {
 
   updateView = () => {
     this.element.innerHTML = ''
-
     console.log(this.status, this.data)
 
     switch (this.status) {
@@ -102,6 +98,5 @@ document.addEventListener('DOMContentLoaded', () => {
       location.assign('/')
     }
   } catch (e) {}
-
   new UserList()
 })
